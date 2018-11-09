@@ -30,7 +30,7 @@ def pp(request,page="1",p="a"):
 def select(request):
     '''查询'''
     ob = models.Users.objects.all()
-    print(ob)
+    # print(ob)
     return render(request,"form/add-select.html",{'accounts':ob})
 
 def add(request):
