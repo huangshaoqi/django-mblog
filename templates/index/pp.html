@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    {% if page == "1" %}
+        ：{{ page }}
+        ：{{ p }}
+    {% else %}
+        ppp
+        页码：{{ page }}
+        <br>
+        {{ p }}
+        <br>
+        <a href="{% url 'pp' 12 'we' %}">跳转到首页</a>
+    {% endif %}
+
+</h1>
+</body>
+</html>
