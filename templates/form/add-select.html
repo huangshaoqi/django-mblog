@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <title>ORM增删改查</title>
+</head>
+<body>
+<div class="container" style="position: relative;top: 20px;">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <form role="form" action="{% url 'add'%}">
+                <div class="form-group">
+                    <label for="username">用户名</label><input type="text" class="form-control" id="username" name="username"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label><input type="password" class="form-control" id="password" name="password"/>
+                </div>
+                <div class="form-group">
+                    <label for="email1">邮件</label><input type="email" class="form-control" id="email1" name="email"/>
+                </div>
+                <div class="form-group">
+                    <label for="age">年龄</label><input type="text" class="form-control" id="age" name="age"/>
+                </div>
+
+                <button type="submit" class="btn btn-default">添加</button>
+            </form>
+        </div>
+        <div class="col-md-8 column">
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        用户名
+                    </th>
+                    <th>
+                        密码
+                    </th>
+                    <th>
+                        邮件
+                    </th>
+                    <th>
+                        年龄
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for account in accounts %}
+                <tr>
+                    <td>
+                        {{ account.id }}
+                    </td>
+                    <td>
+                        {{ account.username }}
+                    </td>
+                    <td>
+                        {{ account.password }}
+                    </td>
+                     <td>
+                        {{ account.email }}
+                    </td>
+                    <td>
+                        {{ account.age }}
+                    </td>
+                    <td>
+                        <a href="{% url 'delete' account.id %}">删除</a>
+                        <a href="{% url 'modify_1' account.id %}">修改</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

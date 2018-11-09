@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <title>ORM增删改查</title>
+</head>
+<body>
+<div class="container" style="position: relative;top: 20px;">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <form role="form" action="{% url 'modify_2' account.id%}">
+                <div class="form-group" style="display:none">
+                    <label for="id">用户名</label><input type="text" class="form-control" id="id" name="id" value="{{ account.id }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="username">用户名</label><input type="text" class="form-control" id="username" name="username" value="{{ account.username }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label><input type="password" class="form-control" id="password" name="password" value="{{ account.password }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="email1">邮件</label><input type="email" class="form-control" id="email1" name="email" value="{{ account.email }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="age">年龄</label><input type="text" class="form-control" id="age" name="age" value="{{ account.age }}"/>
+                </div>
+
+                <button type="submit" class="btn btn-default">确认修改</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
