@@ -34,14 +34,9 @@ def pp(request, page="1", p="a"):
 def select(request):
     '''查询'''
     ob = models.Users.objects.all()
-<<<<<<< HEAD
     print(ob)
     return render(request, "form/add-select.html", {'accounts': ob})
 
-=======
-    # print(ob)
-    return render(request,"form/add-select.html",{'accounts':ob})
->>>>>>> 8e41cce2a9d9748d564d993d80ed20e117a0d5b8
 
 def add(request):
     '''添加'''
@@ -199,12 +194,12 @@ def book_select(request):
     # 获取出版童年的所有出版社
     b1_publication = b1.publication.all()
     for pub in b1_publication:
-        print(pub.pname,pub.paddress)
+        print(pub.pname, pub.paddress)
 
     # 通过出版社查找所有的书
     p1 = models.Publication.objects.get(pname='清华出版社')
     all_book = p1.book_set.all()
     print('------------------')
     for book in all_book:
-        print(book.bname,book.bauthor)
+        print(book.bname, book.bauthor)
     return HttpResponse('查找成功')
