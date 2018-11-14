@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>base 模板</title>
+    {% endblock %}
+</head>
+
+<body style="position:absolute;margin: 0 auto;">
+
+<div style="width: 800px;height: 100px;background-color: blue;">
+    {% block header %}
+        这是header
+    {% endblock %}
+</div>
+
+
+<div style="width: 800px;height: 600px;background-color: gray;">
+    {% block content %}
+        这是content
+    {% endblock %}
+</div>
+
+
+<div style="width: 800px;height: 100px;background-color: green;">
+    {% block footer %}
+        这是footer
+    {% endblock %}
+</div>
+
+</body>
+</html>
